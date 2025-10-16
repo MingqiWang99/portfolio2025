@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research - Mingqi Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="format.css">
+</head>
+<body>
+  <header>
+      <div class="logo">
+          <a href="home.html">
+              <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+          </a>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="about.html">About</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <!-- Image Slider Section -->
+  <div class="image-slider-container">
+      <div class="image-slider" id="imageSlider">
+          <!-- Slider Item 1 -->
+          <div class="slider-item" onclick="window.location.href='construction.html'">
+              <img src="images/diy_prosthetics/diy_prosthetics_cover.png" alt="DIY Prosthetics">
+              <div class="slider-overlay">
+                  <div class="slider-title">Beyond Function: A Multi-Platform Analysis of DIY Prosthetics and Maker Narratives</div>
+              </div>
+          </div>
+          <!-- Slider Item 2 -->
+          <div class="slider-item" onclick="window.location.href='construction.html'">
+              <img src="images/diy_prosthetics/diy_prosthetics2_cover.png" alt="DIY Prosthetics2">
+              <div class="slider-overlay">
+                  <div class="slider-title">From Function to Augmentation: Exploring DIY Prosthetics</div>
+              </div>
+          </div>
+          <!-- Slider Item 3 -->
+          <div class="slider-item" onclick="window.location.href='construction.html'">
+              <img src="images/musictherapy/musictherapy_cover.png" alt="Music therapy">
+              <div class="slider-overlay">
+                  <div class="slider-title">Immersive Virtual Reality for Older Adults in Community Music Activities</div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button class="slider-nav prev" onclick="moveSlide(-1)">‹</button>
+      <button class="slider-nav next" onclick="moveSlide(1)">›</button>
+      
+      <!-- Dots Navigation -->
+      <div class="slider-dots" id="sliderDots"></div>
+  </div>
+
+  <div class="main-content">
+      <h1>Publications</h1>
+
+      <!-- Conference Section -->
+      <div class="publications-grid">
+          <div class="subtitle">Conference</div>
+          <div class="papers-list">
+              <div class="paper-item">
+                  <div class="paper-title">
+                      Beyond Function: A Multi-Platform Analysis of DIY Prosthetics and Maker Narratives
+                      <span class="paper-links">
+                          <a href="papers/Beyong Function_Wang.pdf" target="_blank">[PDF]</a>
+                          <a href="construction.html">[Project Link]</a>
+                      </span>
+                  </div>
+                  <div class="paper-authors">Mingqi Wang and Leila Aflatoony</div>
+                  <div class="paper-venue">In Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS '25)</div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Work in Progress Section -->
+      <div class="publications-grid">
+          <div class="subtitle">Work in Progress</div>
+          <div class="papers-list">
+              <div class="paper-item">
+                  <div class="paper-title">
+                      From Function to Augmentation: Exploring DIY Prosthetics Across Platforms, Practices, and Perceptions (WIP)
+                      <span class="paper-links">
+                          <a href="papers/function-to-augmentation.pdf" target="_blank">[PDF]</a>
+                          <a href="construction.html">[Project Link]</a>
+                      </span>
+                  </div>
+                  <div class="paper-authors">Mingqi Wang, Yueyi Zhu, Yuhan Hu and Leila Aflatoony</div>
+              </div>
+
+              <div class="paper-item">
+                  <div class="paper-title">
+                      Exploring the Possibilities of Immersive Virtual Reality for Older Adults in Community Music Activities (WIP)
+                      <span class="paper-links">
+                          <a href="papers/vr-older-adults.pdf" target="_blank">[PDF]</a>
+                          <a href="construction.html">[Project Link]</a>
+                      </span>
+                  </div>
+                  <div class="paper-authors">Tongxin Sun, Xiaofan Ma, Mingqi Wang, Yu'an Su, and Jihong Jeung</div>
+              </div>
+
+              <div class="paper-item">
+                  <div class="paper-title">
+                      Companion Robot for Education: A Literature Review (WIP)
+                      <span class="paper-links">
+                          <a href="papers/companion-robot.pdf" target="_blank">[PDF]</a>
+                          <a href="construction.html">[Project Link]</a>
+                      </span>
+                  </div>
+                  <div class="paper-authors">Mingqi Wang, Qun Liu, Yixiao Wang, and EunSook Kwon</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <footer>
+      <p>&copy; 2025 Mingqi Wang</p>
+  </footer>
+
+  <script>
+      let currentSlide = 0;
+      const slider = document.getElementById('imageSlider');
+      const slides = document.querySelectorAll('.slider-item');
+      const dotsContainer = document.getElementById('sliderDots');
+      
+      // Create dots
+      slides.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.classList.add('slider-dot');
+          if (index === 0) dot.classList.add('active');
+          dot.onclick = () => goToSlide(index);
+          dotsContainer.appendChild(dot);
+      });
+      
+      const dots = document.querySelectorAll('.slider-dot');
+      
+      function updateSlider() {
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentSlide);
+          });
+      }
+      
+      function moveSlide(direction) {
+          currentSlide += direction;
+          if (currentSlide < 0) currentSlide = slides.length - 1;
+          if (currentSlide >= slides.length) currentSlide = 0;
+          updateSlider();
+      }
+      
+      function goToSlide(index) {
+          currentSlide = index;
+          updateSlider();
+      }
+      
+      // Auto-play slider (optional)
+      setInterval(() => {
+          moveSlide(1);
+      }, 5000);
+  </script>
+</body>
+</html>

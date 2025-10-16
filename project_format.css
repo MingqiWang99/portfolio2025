@@ -1,0 +1,486 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Project Title Section */
+.project-title {
+    margin-top: 80px;
+    padding: 60px 80px;
+    background-color: #f9f9f9;
+}
+
+.project-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.title-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 0;
+    border-top: 1px solid #ddd;
+    gap: 40px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-meta,
+.project-member {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.project-category {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.category-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tools {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tools img {
+    height: 30px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.tools img:hover {
+    opacity: 1;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 60px 40px;
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 30px;
+}
+
+.sidebar-nav .nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 5px 0;
+    position: relative;
+}
+
+.sidebar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #2454FF;
+    transition: width 0.3s ease;
+}
+
+.sidebar-nav .nav-link.active {
+    color: #2454FF;
+}
+
+.sidebar-nav .nav-link.active::before {
+    width: 10px;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 60px 80px;
+    min-width: 0;
+}
+
+.project-section {
+    margin-bottom: 80px;
+    scroll-margin-top: 100px;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.project-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Content Layouts */
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.content-grid.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content-grid.three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.content-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+    display: flex;
+    align-items: center;
+}
+
+.text-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.content-block p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Code Section Styles */
+.code-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.code-section {
+    margin: 0;
+}
+
+.code-section h3 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.code-section pre {
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.code-section pre code {
+    display: block;
+    padding: 15px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding: 30px 40px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .sidebar-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar-nav ul li {
+        margin-bottom: 20px;
+    }
+
+    .sidebar-nav .nav-link::before {
+        left: -15px;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    .project-title {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    .project-title {
+        padding: 30px 20px;
+        margin-top: 70px;
+    }
+
+    .project-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-category {
+        text-align: left;
+    }
+
+    .tools {
+        justify-content: flex-start;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .sidebar-nav ul li {
+        margin-bottom: 15px;
+    }
+
+    .content-grid.two-column,
+    .content-grid.three-column {
+        grid-template-columns: 1fr;
+    }
+
+    .code-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .code-section pre code {
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+
+    .project-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .project-section {
+        margin-bottom: 50px;
+    }
+
+    .tools img {
+        height: 25px;
+    }
+
+    .code-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .code-section pre {
+        max-height: 300px;
+    }
+
+    .code-section pre code {
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+}

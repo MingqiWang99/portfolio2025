@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Mingqi Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #fff;
+      }
+
+      /* Header Styles */
+      header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 40px;
+          background-color: rgba(255, 255, 255, 0.95);
+          border-bottom: 1px solid #ddd;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+          backdrop-filter: blur(10px);
+      }
+
+      header .logo {
+          display: flex;
+          align-items: center;
+      }
+
+      header .logo a {
+          display: flex;
+          align-items: center;
+      }
+
+      header .logo img {
+          height: 40px;
+          width: auto;
+      }
+
+      nav ul {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+      }
+
+      nav ul li a {
+          text-decoration: none;
+          color: #000;
+          font-weight: 500;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background-color: #fff;
+          transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+          background-color: #000;
+          color: #fff;
+      }
+
+      .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 5px;
+      }
+
+      .mobile-menu-toggle span {
+          width: 25px;
+          height: 3px;
+          background-color: #000;
+          transition: all 0.3s ease;
+      }
+
+      /* About Section */
+      .about-section {
+          margin-top: 80px;
+          padding: 80px;
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .about-container {
+          display: flex;
+          gap: 80px;
+          align-items: center;
+      }
+
+      .about-image {
+          flex: 1;
+          max-width: 500px;
+      }
+
+      .about-image img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+      .about-content {
+          flex: 1;
+      }
+
+      .about-content h1 {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 3rem;
+          margin-bottom: 30px;
+          color: #222;
+      }
+
+      .about-content p {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          margin-bottom: 20px;
+          color: #555;
+      }
+
+      .contact-info {
+          margin-top: 40px;
+          padding-top: 30px;
+          border-top: 2px solid #eee;
+      }
+
+      .contact-info h3 {
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+          color: #333;
+      }
+
+      .contact-info p {
+          margin-bottom: 10px;
+      }
+
+      .contact-info a {
+          color: #555;
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+
+      .contact-info a:hover {
+          color: #000;
+      }
+
+      /* Footer */
+      footer {
+          background-color: #f5f5f5;
+          color: #666;
+          text-align: center;
+          padding: 30px 20px;
+          margin-top: 80px;
+      }
+
+      footer p {
+          font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          header {
+              padding: 15px 20px;
+          }
+
+          nav {
+              display: none;
+          }
+
+          .mobile-menu-toggle {
+              display: flex;
+          }
+
+          .about-section {
+              padding: 40px 20px;
+          }
+
+          .about-container {
+              flex-direction: column;
+              gap: 40px;
+          }
+
+          .about-image {
+              max-width: 100%;
+          }
+
+          .about-content h1 {
+              font-size: 2rem;
+          }
+
+          .about-content p {
+              font-size: 1rem;
+          }
+      }
+  </style>
+</head>
+<body>
+  <header>
+      <div class="logo">
+          <a href="home.html">
+              <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+          </a>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="about.html">About</a></li>
+          </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  </header>
+
+  <section class="about-section">
+      <div class="about-container">
+          <div class="about-image">
+              <img src="images/profile.jpg" alt="Mingqi Wang">
+          </div>
+          <div class="about-content">
+              <h1>About Me</h1>
+              <p>
+                  Hello! I'm Mingqi (Grace) Wang. I'm a researcher, designer, and swimming enthusiast exploring how interactive systems can enhance body awareness, physical performance, and accessibility.
+              </p>
+           
+              
+              <div class="contact-info">
+                  <h3>Get in Touch</h3>
+                  <p>Email: <a href="mailto:mwang766@gatech.edu">mwang766@gatech.edu</a></p>
+                  <p>LinkedIn: <a href="https://www.linkedin.com/in/grace-wang-8a025a151/" target="_blank">linkedin.com/in/grace-wang-8a025a151</a></p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer>
+      <p>&copy; 2025 Mingqi Wang</p>
+  </footer>
+
+  <script>
+      // Mobile menu toggle functionality
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('nav');
+
+      mobileMenuToggle.addEventListener('click', () => {
+          nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      });
+  </script>
+</body>
+</html>

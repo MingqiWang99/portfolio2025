@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingqi Wang Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="format.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="landing-section">
+        <div id="p5-canvas"></div>
+        <div class="landing-content">
+            <h1 class="name">Mingqi Wang</h1>
+            <p class="description">is an interdisciplinary designer who combines creativity with technology to build meaningful experiences.</p>
+        </div>
+    </section>
+
+    <section id="work" class="featured-section">
+        <h2>Featured Works</h2>
+        <div class="featured-works">
+            <a href="prosthesis_simple.html" class="card">
+                <img src="images/render_carbonfiber.png" alt="Spectrum Step">
+                <div class="card-content">
+                    <h3 class="card-title">Spectrum Step</h3>
+                    <p class="card-description">Redefine prostheses from solely functional devices to symbols of positive empowerment.</p>
+                    <div class="card-tags">
+                        <span>#Health Product</span>
+                        <span>#Physical Computing</span>
+                        <span>#Parametric Design</span>
+                    </div>
+                </div>
+            </a>
+            <a href="aviation.html" class="card">
+                <img src="images/aviation_cover.png" alt="Aviation">
+                <div class="card-content">
+                    <h3 class="card-title">Circular Design for Aviation</h3>
+                    <p class="card-description">Aims to address the existing conflicts between turnaround sanitation efficiency, cleaning effectiveness, and passenger experience.</p>
+                    <div class="card-tags">
+                        <span>#Suatainability</span>
+                        <span>#Industrial Design</span>
+                        <span>#Aviation</span>
+                    </div>
+                </div>
+            </a>
+            <a href="uposture.html" class="card">
+                <img src="images/wearable_mockup.png" alt="Uposture">
+                <div class="card-content">
+                    <h3 class="card-title">Uposture</h3>
+                    <p class="card-description">A wearable device that promotes better posture with real-time feedback, encouraging healthy habits, improving alignment, reducing back pain, and enhancing well-being in different work settings.</p>
+                    <div class="card-tags">
+                        <span>#HCI Research Methods</span>
+                        <span>#Physical Computing</span>
+                        <span>#CAD Modeling</span>
+                    </div>
+                </div>
+            </a>
+            <a href="carlighting.html" class="card">
+                <img src="images/CD701_cover.png" alt="CD701 Lighting Design">
+                <div class="card-content">
+                    <h3 class="card-title">Intelligent Lighting Design for CD701</h3>
+                    <p class="card-description">This professional project features the interactive interior and exterior lighting design of a concept car which is later launched in 2024</p>
+                    <div class="card-tags">
+                        <span>#Experience Design</span>
+                        <span>#Lighting Design</span>
+                        <span>#After Effects</span>
+                        <span>#Unreal Engine</span>
+                    </div>
+                </div>
+            </a>
+            <a href="biowheel.html" class="card">
+                <img src="images/Wheel_cover.png" alt="BioWheel">
+                <div class="card-content">
+                    <h3 class="card-title">BioWheel</h3>
+                    <p class="card-description">Biometric steering wheel apparatus for driver drowsiness detection, warning, and mitigation</p>
+                    <div class="card-tags">
+                        <span>#Product Development</span>
+                        <span>#Agile Development</span>
+                        <span>#Physical Computing</span>
+                    </div>
+                </div>
+            </a>
+            <a href="lightbot.html" class="card">
+                <img src="images/Lightbot_cover.png" alt="LightBot">
+                <div class="card-content">
+                    <h3 class="card-title">LightBot</h3>
+                    <p class="card-description">An installation and interactive robot that uses LED lights to draw in 3D space which follow a predetermined path or track the human hand.</p>
+                    <div class="card-tags">
+                        <span>#Robotics</span>
+                        <span>#Physical Computing</span>
+                        <span>#Interactive Installation</span>
+                        <span>#CAD Modeling</span>
+                    </div>
+                </div>
+            </a>
+            <a href="construction.html" class="card">
+                <img src="images/Chromural_cover.png" alt="Archives">
+                <div class="card-content">
+                    <h3 class="card-title">Archives</h3>
+                    <p class="card-description">Archives of my other works</p>
+                    <div class="card-tags">
+                        <span>#Craft</span>
+                        <span>#Drawing</span>
+                        <span>#Website Design</span>
+                        <span>#Logo Design</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <h2>Education</h2>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Aug. 2024 – May. 2026</p>
+                <h3>Georgia Institute of Technology</h3>
+                <p>Master of Industrial Design</p>
+                <p>Award: Teaching Assistant Award</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/Gatech_logo.png" alt="Georgia Tech Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Sep. 2018 – Jun. 2022</p>
+                <h3>Rhode Island School of Design (RISD)</h3>
+                <p>BFA Industrial Design</p>
+                <p>Award: Honor Student | 2019, 2020, 2021, 2022</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/risd_logo.png" alt="RISD Logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <h2>Related Experiences</h2>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Aug. 2024 – May. 2025</p>
+                <h3>Georgia Institute of Technology</h3>
+                <p>Teaching and Research Assistant</p>
+                <p>Facilitated project group discussions, guided students in concept development and design direction. Provided hands-on assistance with Arduino prototyping and other technical aspects. Graded assignments and managed course announcements via Canvas.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/Gatech_logo.png" alt="Georgia Tech Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Sep. 2022 – Oct. 2023</p>
+                <h3>AIUX Technology Co.</h3>
+                <p>Product Experience Designer - Full Time</p>
+                <p>Worked on user research, experience evaluation, product analysis, creative design, product design, technical evaluation, and technical solutions. Specialized in experience design of electric vehicles. Built environment with Unreal Engine and other tools to simulate design scenarios</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/AIUX_logo.png" alt="AIUX Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Jun. 2021 – Aug. 2021</p>
+                <h3>Lenovo (Beijing) Limited</h3>
+                <p>UIUX Design Intern</p>
+                <p>Responsible for the web UI, logo design, and web instruction manual to elevate department presentation to clients. Evaluated the product functions and user needs to make a corresponding design. Studied the standards of different UIUX design applications and communicated with relevant colleagues for improvement.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/LenovoLogo.png" alt="Lenovo Logo">
+            </div>
+        </div>
+        <a href="images/MingqiWang_CV2025.pdf" class="cv-button" download>View CV</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mingqi Wang</p>
+    </footer>
+
+    <script src="sketch.js"></script>
+</body>
+</html>

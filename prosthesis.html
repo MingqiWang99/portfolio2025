@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPECTRUM Step - Mingqi Wang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project_format.css">
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="home.html">
+                <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="home.html#about">About</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Project Title Section -->
+    <section class="project-title">
+        <h1>SPECTRUM STEP</h1>
+        <div class="title-item">
+            <div class="project-info">
+                <p class="project-meta">2023 | Personal Work</p>
+                <p class="project-member">Project Member: Mingqi Wang and Qionglan Wang</p>
+            </div>
+            <div class="project-category">
+                <p class="category-name">Interactive Assistive Technology</p>
+                <div class="tools">
+                    <img src="images/rhino_logo.png" alt="Rhino">
+                    <img src="images/arduino_logo.png" alt="Arduino">
+                    <img src="images/ameba_logo.png" alt="Ameba">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#overview" class="nav-link">Overview</a></li>
+                    <li><a href="#ideation" class="nav-link">Ideation</a></li>
+                    <li><a href="#solution" class="nav-link">Solution</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Project Overview Section -->
+            <section id="overview" class="project-section">
+                <h2>Project Overview</h2>
+                
+                <div class="content-grid two-column">
+                    <img src="images/render_carbonfiber.png" alt="Overview Image">
+                    <div class="text-content">
+                        <p>This project seeks to redefine prostheses from solely functional devices often associated with negative connotations, to symbols of positive empowerment. It aims to enlighten the public on the significance of prostheses in their users' lives, promoting a perspective of pride and aesthetic appreciation.</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <img src="images/prosthesis_research1.png" alt="Large Overview Image" class="full-width-image">
+                    <p>“A pros·the·sis /präsˈTHēsəs/, or a prosthetic implant, is an artificial device that replaces a missing body part, which may be lost through trauma, disease, or a condition present at birth.” This project showcases an example with an above-knee leg prosthesis.</p>
+                </div>
+            </section>
+
+            <!-- Project Ideation Section -->
+            <section id="ideation" class="project-section">
+                <h2>Project Ideation</h2>
+                
+                <div class="content-grid two-column">
+                    <img src="images/prosthesis_ideation1.png" alt="Ideation Image 1">
+                    <img src="images/prosthesis_ideation2.png" alt="Ideation Image 2">
+                </div>
+
+                <div class="content-grid two-column">
+                    <div class="text-content">
+                        <p>Ameba is a BESO (Bi-directional Progressive Structural Optimization) software developed as a Rhino - Grasshopper plugin for structural optimization which is experimented in this project for form development. A cost-effective, structurally efficient, and highly customizable solution is achieved by using such method. 
+
+In a given design space in Ameba, the loads, supports and other boundaries are defined and processed.
+Ameba uses Kpa (N/mm2) as its unit.  </p>
+                    </div>
+                    <div class="text-content">
+                        <p>According to the ISO Standard 10328:2006 for lower limb prostheses, the two main loading conditions are toe-off and heel strike. The pylon is expected to withstand a compressive proof load of 1,395 N and a maximum load of 3,220 N. </p>
+                    </div>
+                </div>
+
+                <div class="content-grid two-column">
+                    <img src="images/prosthesis_solution1.png" alt="Ideation Image 4">
+                    <img src="images/prosthesis_solution2.png" alt="Ideation Image 5">
+                </div>
+
+                <div class="content-grid two-column">
+                    <div class="text-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                    </div>
+                    <div class="text-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solution Section -->
+            <section id="solution" class="project-section">
+                <h2>Solution</h2>
+                
+                <!-- Single image example -->
+                <div class="content-block">
+                    <img src="images/solution_image.png" alt="Solution" class="full-width-image">
+                    <p>Description of the solution approach.</p>
+                </div>
+
+                <!-- Code blocks in parallel layout -->
+                <div class="code-container">
+                    <div class="code-section">
+                        <h3>Arduino Setup Code</h3>
+                        <pre><code class="language-cpp">
+#include "Kalman.h"
+#include <Wire.h>
+#include <Math.h>
+#include "Adafruit_NeoPixel.h"
+
+Adafruit_NeoPixel  rgb_display_9(60);
+Adafruit_NeoPixel  rgb_display_9_side1(30);
+Adafruit_NeoPixel  rgb_display_9_side2(30);
+
+int brightness = 0;
+int counter = 0;
+int t = 10;
+int rgb_t = 1;
+int cut_pos = 1;
+
+bool mode = true;
+int last_switch_status = 0;
+int switch_status = 0;
+
+float fRad2Deg = 57.295779513f;
+const int MPU = 0x68; 
+const int nValCnt = 7;
+
+const int nCalibTimes = 1000; 
+int calibData[nValCnt]; 
+
+unsigned long nLastTime = 0;
+float fLastRoll = 0.0f; 
+float fLastPitch = 0.0f;
+Kalman kalmanRoll;
+Kalman kalmanPitch; 
+
+void setup() {
+  rgb_display_9.begin(); // initialization
+  rgb_display_9.setPin(9);
+  rgb_display_9_side1.begin();
+  rgb_display_9_side1.setPin(8);
+  rgb_display_9_side2.begin();
+  rgb_display_9_side2.setPin(7);
+  Serial.begin(9600); 
+  Wire.begin(); 
+  WriteMPUReg(0x6B, 0); 
+
+  Calibration();
+  nLastTime = micros(); 
+  pinMode(2, INPUT);
+}
+
+void loop() {
+  switch_status = digitalRead(2);
+  if ((last_switch_status == 1) && (switch_status == 0))
+  {
+    mode = !mode;
+  }
+  
+  int readouts[nValCnt];
+  ReadAccGyr(readouts);
+  
+  float realVals[7];
+  Rectify(readouts, realVals); 
+
+  //计算加速度向量的模长，均以g为单位
+  float fNorm = sqrt(realVals[0] * realVals[0] + realVals[1] * realVals[1] + realVals[2] * realVals[2]);
+  float fRoll = GetRoll(realVals, fNorm); 
+  if (realVals[1] > 0) {
+    fRoll = -fRoll;
+  }
+  float fPitch = GetPitch(realVals, fNorm); 
+  if (realVals[0] < 0) {
+    fPitch = -fPitch;
+  }
+
+  unsigned long nCurTime = micros();
+  float dt = (double)(nCurTime - nLastTime) / 1000000.0;
+  // Kalman filter on Roll and Pitch
+  float fNewRoll = kalmanRoll.getAngle(fRoll, realVals[4], dt);
+  float fNewPitch = kalmanPitch.getAngle(fPitch, realVals[5], dt);
+  // calculate acceleration w.r.t. filtering result
+  float fRollRate = (fNewRoll - fLastRoll) / dt;
+  float fPitchRate = (fNewPitch - fLastPitch) / dt;
+ 
+ // update roll and pitch
+  fLastRoll = fNewRoll;
+  fLastPitch = fNewPitch;
+  //update the test time
+  nLastTime = nCurTime;
+
+  int n = digitalRead(2); // get the state of the switch
+  Serial.print("online");
+  Serial.print(n);
+//  // COLORFUL MODE
+//  if (n == HIGH) 
+//  {
+//    {
+//      rgb_display_9.setBrightness(brightness);
+//      if (brightness > 6)
+//      {
+//        for (int i = 1; i <= 60; i = i + (1)) // set color for each LED along the band
+//        {
+//          rgb_display_9.setPixelColor(i-1, 138,43,226); 
+//
+//          rgb_display_9.show();
+//          // delay(50);
+//        }
+//      }
+//      else {
+//        for (int i = 1; i <= 60; i = i + (1)) // set color for each LED along the band
+//        {
+//          rgb_display_9.setPixelColor(i-1, 30,144,255); 
+//          // rgb_display_9.setBrightness(5);
+//          rgb_display_9.show();// display
+//          // delay(50);
+//        }
+//      }
+//      counter = counter + 1;
+//      if (counter % 1 == 0)
+//      {
+//          brightness = (brightness + t);
+//      }
+//      Serial.print(brightness);
+//      if (brightness > 50)
+//      {
+//        t = -t;
+//      }
+//      else if ((t < 0) && (brightness < 6))
+//      {
+//        t = -t;
+//      }
+//    }
+//
+
+//  if (n == LOW) 
+
+
+
+// random dynamic light MODE
+if (n == LOW) 
+  {
+    {
+      rgb_display_9.setBrightness(brightness);
+      rgb_display_9_side1.setBrightness(brightness);
+      rgb_display_9_side2.setBrightness(brightness);
+
+      if (brightness > 10)
+
+      {
+        for (int i = 1; i <= 60; i = i + (1)) // set color for each LED along the band
+        {
+          if (i <= cut_pos)
+          {
+//            rgb_display_9.setPixelColor(i-1, 138,43,226); 
+//            rgb_display_9.setPixelColor(i-1, 147,72,225); 
+            rgb_display_9.setPixelColor(i-1, 138,43,226); 
+            rgb_display_9.show();
+            rgb_display_9_side1.setPixelColor(i-1,  138,43,226); 
+            rgb_display_9_side1.show();
+            rgb_display_9_side2.setPixelColor(i-1,  138,43,226); 
+            rgb_display_9_side2.show();
+
+//            rgb_display_9.show();
+          }
+          if ((i >cut_pos) && (i <= cut_pos + 8))
+          {
+//            rgb_display_9.setPixelColor(i-1, 99,229,201);
+//            rgb_display_9.setPixelColor(i-1, 225,195,13); 
+
+//            rgb_display_9.show();
+          rgb_display_9.setPixelColor(i-1, 99,229,201);
+          rgb_display_9.show();
+          rgb_display_9_side1.setPixelColor(i-1, 99,229,201);
+          rgb_display_9_side1.show();
+          rgb_display_9_side2.setPixelColor(i-1, 99,229,201);
+          rgb_display_9_side2.show();
+          }
+          if ((i >(cut_pos +8)) && (i <= cut_pos + 16))
+          {
+//            rgb_display_9.setPixelColor(i-1, 99,229,201); 
+//            rgb_display_9.setPixelColor(i-1, 225,64,242); 
+//
+//
+//            rgb_display_9.show();
+          rgb_display_9.setPixelColor(i-1,  99,229,201); 
+          rgb_display_9.show();
+          rgb_display_9_side1.setPixelColor(i-1,  99,229,201); 
+          rgb_display_9_side1.show();
+          rgb_display_9_side2.setPixelColor(i-1,  99,229,201);  
+          rgb_display_9_side2.show();
+          }
+
+          if (i > cut_pos+16)
+          {
+//            rgb_display_9.setPixelColor(i-1, 138,43,226); 
+//            rgb_display_9.setPixelColor(i-1, 147,72,225); 
+//
+//
+//            rgb_display_9.show();
+          rgb_display_9.setPixelColor(i-1,   138,43,226); 
+          rgb_display_9.show();
+          rgb_display_9_side1.setPixelColor(i-1,   138,43,226); 
+          rgb_display_9_side1.show();
+          rgb_display_9_side2.setPixelColor(i-1, 138,43,226); 
+          rgb_display_9_side2.show();
+          }
+          // delay(50);
+        }
+      }
+            else {
+        for (int i = 1; i <= 60; i = i + (1)) // set color for each LED along the band
+        {
+//          rgb_display_9.setPixelColor(i-1, 30,144,255); 
+//          // rgb_display_9.setBrightness(5);
+//          rgb_display_9.show();// display
+//          // delay(50);
+          rgb_display_9.setPixelColor(i-1,  30,144,255); 
+          rgb_display_9.show();
+          rgb_display_9_side1.setPixelColor(i-1,  30,144,255);  
+          rgb_display_9_side1.show();
+          rgb_display_9_side2.setPixelColor(i-1, 30,144,255); 
+          rgb_display_9_side2.show();
+        }
+      }
+
+      counter = counter + 1;
+
+
+//      if (counter % 2 == 0)
+//      {
+//        if (random(0, 100)>60)
+//        {
+//          cut_pos += 1; //random(0, 50);
+//        }
+//        else{
+//          cut_pos += 5;
+//        }
+//      }
+//
+//      
+      if (counter % 2 == 0)
+      {
+          cut_pos = random(0, 20);
+      }
+//      Serial.print(cut_pos);
+        if (counter % 1 == 0)
+      {
+          brightness = (brightness + t);
+      }
+//      Serial.print(brightness);
+      if (brightness > 50)
+      {
+        t = -t;
+      }
+      else if ((t < 0) && (brightness < 10))
+      {
+        t = -t;
+      }
+
+    }
+  }
+</code></pre>
+                    </div>
+                </div>
+
+                <!-- Three column image grid example -->
+                <div class="content-grid three-column">
+                    <img src="images/detail1.png" alt="Detail 1">
+                    <img src="images/detail2.png" alt="Detail 2">
+                    <img src="images/detail3.png" alt="Detail 3">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mingqi Wang. All rights reserved.</p>
+    </footer>
+
+    <!-- Prism.js for syntax highlighting - Load C before C++ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('.project-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('header nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction - Mingqi Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background-color: #fff;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+      }
+
+      /* Header Styles */
+      header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 40px;
+          background-color: rgba(255, 255, 255, 0.95);
+          border-bottom: 1px solid #ddd;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+          backdrop-filter: blur(10px);
+      }
+
+      header .logo {
+          display: flex;
+          align-items: center;
+      }
+
+      header .logo a {
+          display: flex;
+          align-items: center;
+      }
+
+      header .logo img {
+          height: 40px;
+          width: auto;
+      }
+
+      nav ul {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+      }
+
+      nav ul li a {
+          text-decoration: none;
+          color: #000;
+          font-weight: 500;
+          padding: 10px 20px;
+          border-radius: 20px;
+          background-color: #fff;
+          transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+          background-color: #000;
+          color: #fff;
+      }
+
+      .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 5px;
+      }
+
+      .mobile-menu-toggle span {
+          width: 25px;
+          height: 3px;
+          background-color: #000;
+          transition: all 0.3s ease;
+      }
+
+      /* Background Canvas */
+      #p5-canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+      }
+
+      /* Main Content */
+      .main-content {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 80px;
+          position: relative;
+          z-index: 1;
+      }
+
+      .construction-message {
+          text-align: center;
+          font-size: 1.2rem;
+          color: #333;
+      }
+
+      /* Footer */
+      footer {
+          background-color: #f5f5f5;
+          color: #666;
+          text-align: center;
+          padding: 30px 20px;
+          position: relative;
+          z-index: 1;
+      }
+
+      footer p {
+          font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          header {
+              padding: 15px 20px;
+          }
+
+          nav {
+              display: none;
+          }
+
+          .mobile-menu-toggle {
+              display: flex;
+          }
+
+          .construction-message {
+              font-size: 1rem;
+              padding: 20px;
+          }
+      }
+  </style>
+</head>
+<body>
+  <div id="p5-canvas"></div>
+
+  <header>
+      <div class="logo">
+          <a href="home.html">
+              <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+          </a>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="about.html">About</a></li>
+          </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+  </header>
+
+  <div class="main-content">
+      <p class="construction-message">This page is currently being built</p>
+  </div>
+
+  <footer>
+      <p>&copy; 2025 Mingqi Wang</p>
+  </footer>
+
+  <script>
+      // Mobile menu toggle functionality
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('nav');
+
+      mobileMenuToggle.addEventListener('click', () => {
+          nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // P5.js sketch from sketch.js
+      let cols, rows;
+      let scl = 30;
+      let zoff = 0;
+      let particles = [];
+      let flowfield;
+
+      function setup() {
+        let canvas = createCanvas(windowWidth, windowHeight);
+        canvas.parent('p5-canvas');
+        
+        cols = floor(width / scl);
+        rows = floor(height / scl);
+        flowfield = new Array(cols * rows);
+        
+        for (let i = 0; i < 1500; i++) {
+          particles[i] = new Particle();
+        }
+        background(255);
+      }
+
+      function draw() {
+        let yoff = 0;
+        for (let y = 0; y < rows; y++) {
+          let xoff = 0;
+          for (let x = 0; x < cols; x++) {
+            let index = x + y * cols;
+            let angle = noise(xoff, yoff, zoff) * TWO_PI * 2;
+            let v = p5.Vector.fromAngle(angle);
+            v.setMag(1);
+            flowfield[index] = v;
+            xoff += 0.08;
+          }
+          yoff += 0.08;
+        }
+        zoff += 0.004;
+        
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].follow(flowfield);
+          particles[i].update();
+          particles[i].edges();
+          particles[i].show();
+        }
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        cols = floor(width / scl);
+        rows = floor(height / scl);
+        flowfield = new Array(cols * rows);
+        background(255);
+      }
+
+      class Particle {
+        constructor() {
+          this.pos = createVector(random(width), random(height));
+          this.vel = createVector();
+          this.acc = createVector();
+          this.maxspeed = 1.5;
+          this.color = color(36, 84, 255, 8);
+        }
+        
+        follow(flowfield) {
+          let x = floor(this.pos.x / scl);
+          let y = floor(this.pos.y / scl);
+          let index = x + y * cols;
+          let force = flowfield[index];
+          this.applyForce(force);
+        }
+        
+        update() {
+          this.vel.add(this.acc);
+          this.vel.limit(this.maxspeed);
+          this.pos.add(this.vel);
+          this.acc.mult(0);
+        }
+        
+        applyForce(force) {
+          this.acc.add(force);
+        }
+        
+        edges() {
+          if (this.pos.x > width) this.pos.x = 0;
+          if (this.pos.x < 0) this.pos.x = width;
+          if (this.pos.y > height) this.pos.y = 0;
+          if (this.pos.y < 0) this.pos.y = height;
+        }
+        
+        show() {
+          let d = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+          if (d < 50) {
+            this.color = color(36, 84, 255, 8);
+          } else {
+            this.color = color(36, 84, 255, 8);
+          }
+          strokeWeight(3);
+          
+          if (random(1) < 0.005) {
+            stroke(255, 255, 255, 200);
+            strokeWeight(2);
+          } else {
+            stroke(this.color);
+          }
+          point(this.pos.x, this.pos.y);
+        }
+      }
+  </script>
+</body>
+</html>
