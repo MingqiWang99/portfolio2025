@@ -7,208 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: 'Roboto', sans-serif;
-          line-height: 1.6;
-          color: #333;
-          background-color: #fff;
-      }
-
-      /* Header Styles */
-      header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 15px 40px;
-          background-color: rgba(255, 255, 255, 0.95);
-          border-bottom: 1px solid #ddd;
-          position: fixed;
-          width: 100%;
-          top: 0;
-          z-index: 1000;
-          backdrop-filter: blur(10px);
-      }
-
-      header .logo {
-          display: flex;
-          align-items: center;
-      }
-
-      header .logo a {
-          display: flex;
-          align-items: center;
-      }
-
-      header .logo img {
-          height: 40px;
-          width: auto;
-      }
-
-      nav ul {
-          list-style: none;
-          display: flex;
-          gap: 20px;
-      }
-
-      nav ul li a {
-          text-decoration: none;
-          color: #000;
-          font-weight: 500;
-          padding: 10px 20px;
-          border-radius: 20px;
-          background-color: #fff;
-          transition: all 0.3s ease;
-      }
-
-      nav ul li a:hover {
-          background-color: #000;
-          color: #fff;
-      }
-
-      .mobile-menu-toggle {
-          display: none;
-          flex-direction: column;
-          gap: 5px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 5px;
-      }
-
-      .mobile-menu-toggle span {
-          width: 25px;
-          height: 3px;
-          background-color: #000;
-          transition: all 0.3s ease;
-      }
-
-      /* About Section */
-      .about-section {
-          margin-top: 80px;
-          padding: 80px;
-          max-width: 1400px;
-          margin-left: auto;
-          margin-right: auto;
-      }
-
-      .about-container {
-          display: flex;
-          gap: 80px;
-          align-items: center;
-      }
-
-      .about-image {
-          flex: 1;
-          max-width: 500px;
-      }
-
-      .about-image img {
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      }
-
-      .about-content {
-          flex: 1;
-      }
-
-      .about-content h1 {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 3rem;
-          margin-bottom: 30px;
-          color: #222;
-      }
-
-      .about-content p {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          margin-bottom: 20px;
-          color: #555;
-      }
-
-      .contact-info {
-          margin-top: 40px;
-          padding-top: 30px;
-          border-top: 2px solid #eee;
-      }
-
-      .contact-info h3 {
-          font-size: 1.5rem;
-          margin-bottom: 15px;
-          color: #333;
-      }
-
-      .contact-info p {
-          margin-bottom: 10px;
-      }
-
-      .contact-info a {
-          color: #555;
-          text-decoration: none;
-          transition: color 0.3s;
-      }
-
-      .contact-info a:hover {
-          color: #000;
-      }
-
-      /* Footer */
-      footer {
-          background-color: #f5f5f5;
-          color: #666;
-          text-align: center;
-          padding: 30px 20px;
-          margin-top: 80px;
-      }
-
-      footer p {
-          font-size: 0.9rem;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-          header {
-              padding: 15px 20px;
-          }
-
-          nav {
-              display: none;
-          }
-
-          .mobile-menu-toggle {
-              display: flex;
-          }
-
-          .about-section {
-              padding: 40px 20px;
-          }
-
-          .about-container {
-              flex-direction: column;
-              gap: 40px;
-          }
-
-          .about-image {
-              max-width: 100%;
-          }
-
-          .about-content h1 {
-              font-size: 2rem;
-          }
-
-          .about-content p {
-              font-size: 1rem;
-          }
-      }
-  </style>
+  <link rel="stylesheet" href="format.css">
 </head>
 <body>
   <header>
@@ -251,6 +50,97 @@
           </div>
       </div>
   </section>
+
+ <section id="experience" class="experience-section">
+        <h2>Education</h2>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Aug. 2024 - May. 2026</p>
+                <h3>Georgia Institute of Technology</h3>
+                <p>Master of Industrial Design, Awarded with Graduate Teaching Assistant Award</p>
+                <p>Advisor: Dr. Yixiao Wang, Committees: Dr. EunSook Kwon </p>
+                <p>Thesis: Human Computer Interaction Approaches to Breathing Perception and Feedback in Aquatic Environments</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/Gatech_logo.png" alt="Georgia Tech Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Sep. 2018 - Jun. 2022</p>
+                <h3>Rhode Island School of Design (RISD)</h3>
+                <p>Bachelor of Fine Arts, Industrial Design Honors, GPA: 3.85/4.0</p>
+                <p>Awarded with Department Scholarship and Industrial Design Faculty Award</p>
+
+            </div>
+            <div class="experience-logo">
+                <img src="images/risd_logo.png" alt="RISD Logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <h2>Related Experiences</h2>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Jan. 2025 - Present</p>
+                <h3>Health Design CoLab, Georgia Institute of Technology</h3>
+                <p>Graduate Researcher</p>
+                <p>Principle Investigator: Dr. Leila Aflatoony</p>
+                <p>Assisted with industry study on companion robot, focusing on conducting competitive analysis, academic literature review and HRI research methods to inform industry applications.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/Gatech_logo.png" alt="Georgia Tech Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Mar. 2025 - Aug. 2025</p>
+                <h3>Research Center for Aging User Experience and Service System Design (AeX), The Future Laboratory, Tsinghua University</h3>
+                <p>Research Intern</p>
+                <p>Principle Investigator: Prof. Jihong Jeung</p>
+                <p>Worked on music-based health interventions for aging populations; developed interactive VR environments in Unreal Engine to support emotional well-being and social connectedness through embodied, visual and sound-based experiences.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/tsinghua_logo.svg" alt="Tsinghua Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Jan. 2025 - May. 2025</p>
+                <h3>Georgia Institute of Technology</h3>
+                <p>Graduate Research Assistant</p>
+                <p>Principle Investigator: Dr.EunSook Kwon</p>
+                <p>Assisted with industry study on companion robot, focusing on conducting competitive analysis, academic literature review and HRI research methods to inform industry applications.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/Gatech_logo.png" alt="Georgia Tech Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Sep. 2022 - Oct. 2023</p>
+                <h3>AIUX Technology Co.</h3>
+                <p>Product Experience Designer - Full Time</p>
+                <p>Focused on experience design for electric vehicles, including user research, product analysis, concept development, and technical evaluation. Simulated in-car environments using Unreal Engine and other tools. Several designs were implemented in real-market vehicles.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/AIUX_logo.png" alt="AIUX Logo">
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-details">
+                <p>Jun. 2021 - Aug. 2021</p>
+                <h3>Lenovo (Beijing) Limited</h3>
+                <p>UIUX Design Intern</p>
+                <p>Responsible for the web UI, logo design, and web instruction manual to elevate department presentation to clients. Evaluated the product functions and user needs to make a corresponding design. Studied the standards of different UIUX design applications and communicated with relevant colleagues for improvement.</p>
+            </div>
+            <div class="experience-logo">
+                <img src="images/LenovoLogo.png" alt="Lenovo Logo">
+            </div>
+        </div>
+        <a href="images/MingqiWang_CV2025.pdf" class="cv-button" download>View CV</a>
+    </section>
 
   <footer>
       <p>&copy; 2025 Mingqi Wang</p>

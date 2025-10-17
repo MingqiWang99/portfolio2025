@@ -1,5 +1,5 @@
 let cols, rows;
-let scl = 30; // Increased from 20 to 40 for larger waves
+let scl = 15; // Reduced from 30 to 15 for higher resolution
 let zoff = 0;
 let particles = [];
 let flowfield;
@@ -8,11 +8,14 @@ function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent('p5-canvas');
   
+  // Set pixel density for high-DPI displays (Retina, etc.)
+  pixelDensity(2); // This doubles the resolution
+  
   cols = floor(width / scl);
   rows = floor(height / scl);
   flowfield = new Array(cols * rows);
   
-  for (let i = 0; i < 1500; i++) { // Reduced from 2000 to 1500
+  for (let i = 0; i < 2500; i++) { // Increased particles for denser look
     particles[i] = new Particle();
   }
   background(255);
@@ -28,11 +31,11 @@ function draw() {
       let v = p5.Vector.fromAngle(angle);
       v.setMag(1);
       flowfield[index] = v;
-      xoff += 0.08; // Reduced from 0.1 for smoother, larger waves
+      xoff += 0.08;
     }
-    yoff += 0.08; // Reduced from 0.1 for smoother, larger waves
+    yoff += 0.08;
   }
-  zoff += 0.004; // Reduced from 0.1 for slower, more fluid movement
+  zoff += 0.004;
   
   for (let i = 0; i < particles.length; i++) {
     particles[i].follow(flowfield);
@@ -44,6 +47,7 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  pixelDensity(2); // Maintain pixel density on resize
   cols = floor(width / scl);
   rows = floor(height / scl);
   flowfield = new Array(cols * rows);
@@ -55,13 +59,15 @@ class Particle {
     this.pos = createVector(random(width), random(height));
     this.vel = createVector();
     this.acc = createVector();
-    this.maxspeed = 1.5; // Increased from 2 for more visible movement
-    this.color = color(68, 105, 161, 8); // Increased alpha from 5 to 8
+    this.maxspeed = 1.5;
+    this.color = color(36, 84, 255, 10); // Slightly increased alpha
   }
   
   follow(flowfield) {
     let x = floor(this.pos.x / scl);
     let y = floor(this.pos.y / scl);
+    x = constrain(x, 0, cols - 1); // Prevent index errors
+    y = constrain(y, 0, rows - 1);
     let index = x + y * cols;
     let force = flowfield[index];
     this.applyForce(force);
@@ -88,13 +94,13 @@ class Particle {
   show() {
     let d = dist(this.pos.x, this.pos.y, mouseX, mouseY);
     if (d < 50) {
-      this.color = color(36, 84, 255, 8); // Increased alpha from 5 to 8
+      this.color = color(36, 84, 255, 10);
     } else {
-      this.color = color(36, 85, 255, 8); // Increased alpha from 5 to 8
+      this.color = color(36, 85, 255, 4);
     }
-    strokeWeight(3); // Increased from 2 for thicker lines
+    strokeWeight(2.5);
     
-    if (random(1) < 0.005) { // Reduced from 0.01 for fewer white sparkles
+    if (random(1) < 0.005) {
       stroke(255, 255, 255, 200);
       strokeWeight(2);
     } else {
