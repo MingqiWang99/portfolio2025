@@ -16,6 +16,11 @@
         <div class="logo">
             <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
         </div>
+         <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,6 +29,7 @@
             </ul>
         </nav>
     </header>
+
 
     <section class="landing-section">
         <div id="p5-canvas"></div>
@@ -133,5 +139,29 @@
     </footer>
 
     <script src="sketch.js"></script>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav');
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+  }
+</script>
+
 </body>
+
 </html>
