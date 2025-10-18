@@ -134,6 +134,11 @@ nav ul li a:hover {
   z-index: 2;
   max-width: 900px;
   font-family: 'Cormorant Garamond', serif;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .landing-content .name {
@@ -151,8 +156,9 @@ nav ul li a:hover {
   font-weight: 400;
   color: #333;
   text-align: left;
-  line-height: 1.4;
-  margin: 0;
+  line-height: 1;
+  margin-top:5;
+  /*margin: 0;*/
   padding: 0;
 }
 
