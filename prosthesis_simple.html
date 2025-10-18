@@ -13,22 +13,20 @@
 
     <header>
         <div class="logo">
-            <a href="home.html">
-                <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
-            </a>
+            <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
         </div>
+         <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </header>
 
     <!-- Project Title Section -->
@@ -65,15 +63,26 @@
         <p>&copy; 2025 Mingqi Wang. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const nav = document.querySelector('header nav');
+       <script>
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav');
 
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
-    </script>
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+  }
+</script>
 </body>
 </html>
