@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY_Prosthetics - Mingqi Wang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="simpleproject_format.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/personal_logo.svg" alt="Mingqi Wang Logo">
+        </div>
+         <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Title Section -->
+    <section class="project-title">
+        <h1>DIY Prosthetics Research</h1>
+        <div class="title-item">
+            <div class="project-info">
+                <p class="project-meta">2025 | Research Work</p>
+                <p class="project-member">Authors: Mingqi Wang and Leila Aflatoony </p>
+            </div>
+            <div class="project-category">
+                <p class="category-name">ASSETS 2025 Conference Poster</p>
+                <div class="tools">
+                    <p>Prosthetics, DIY, Makers, Customization, Digital Fabrication, Accessibility</p>
+                    <p>Qualitative Research, Thematic Analysis</p>
+                    <!--<img src="images/fusion_logo.png" alt="Fusion">
+                    <img src="images/rhino_logo.png" alt="Rhino"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content - Project Images -->
+    <main class="project-content">
+        <img src="images/diy_prosthetics/diy_prosthetics_cover.png" alt="DIY_Prosthetics Image 1" class="project-image">
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mingqi Wang. All rights reserved.</p>
+    </footer>
+
+  <script>
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('nav');
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+  }
+</script>
+</body>
+</html>
